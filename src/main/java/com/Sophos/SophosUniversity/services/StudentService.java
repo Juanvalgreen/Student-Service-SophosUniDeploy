@@ -1,5 +1,6 @@
 package com.Sophos.SophosUniversity.services;
 
+import com.Sophos.SophosUniversity.config.RestConts;
 import com.Sophos.SophosUniversity.entities.Student;
 import com.Sophos.SophosUniversity.exceptions.InternalServerErrorException;
 import com.Sophos.SophosUniversity.exceptions.StudentNotFoundException;
@@ -144,20 +145,20 @@ public class StudentService implements IStudentService{
             try{
 
 
-                ResponseEntity<Enrollments[]> responseEntity= restTemplate.getForEntity("http://localhost:9000/api/v1/enrollments/"+id+"/students", Enrollments[].class);
+                ResponseEntity<Enrollments[]> responseEntity= restTemplate.getForEntity(RestConts.BASE_URL_ENROLLMENTS_LOCAL +"/api/v1/enrollments/"+id+"/students", Enrollments[].class);
                 List<Enrollments> enrollments = Arrays.asList(responseEntity.getBody());
 
                 for (Enrollments enroll : enrollments) {
 
-                    Courses course = restTemplate.getForObject("http://localhost:9002/api/v1/courses/" + enroll.getCourse_id(), Courses.class);
+                    Courses course = restTemplate.getForObject(RestConts.BASE_URL_COURSES_DEPLOY + "/api/v1/courses/" + enroll.getCourse_id(), Courses.class);
 
                     if (id.equals(course.getCourse_student_monitor_id())) {
                         course.setCourse_student_monitor_id(null);
-                        restTemplate.put("http://localhost:9002/api/v1/courses",course,Courses.class);
+                        restTemplate.put(RestConts.BASE_URL_COURSES_DEPLOY + "/api/v1/courses",course,Courses.class);
                     }
 
 
-                    restTemplate.delete("http://localhost:9000/api/v1/enrollments/"+enroll.getEnrollment_id());
+                    restTemplate.delete(RestConts.BASE_URL_ENROLLMENTS_DEPLOY + "/api/v1/enrollments/"+enroll.getEnrollment_id());
 
                 }
                 repository.deleteById(id);

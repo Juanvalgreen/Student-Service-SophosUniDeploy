@@ -3,6 +3,7 @@ com/Sophos/SophosUniversity/models/Courses.class
 com/Sophos/SophosUniversity/repository/StudentRepository.class
 com/Sophos/SophosUniversity/exceptions/CourseNotfoundException.class
 com/Sophos/SophosUniversity/exceptions/TeacherNotFoundException.class
+com/Sophos/SophosUniversity/config/RestConts.class
 com/Sophos/SophosUniversity/controllers/ExceptionController.class
 com/Sophos/SophosUniversity/exceptions/StudentNotFoundException.class
 com/Sophos/SophosUniversity/services/StudentService.class

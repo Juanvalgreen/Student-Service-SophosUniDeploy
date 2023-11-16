@@ -12,4 +12,5 @@
 /Users/admon/Documents/universidad/SophosUniversity/BackEnd/StudentService/src/main/java/com/Sophos/SophosUniversity/controllers/ExceptionController.java
 /Users/admon/Documents/universidad/SophosUniversity/BackEnd/StudentService/src/main/java/com/Sophos/SophosUniversity/services/StudentService.java
 /Users/admon/Documents/universidad/SophosUniversity/BackEnd/StudentService/src/main/java/com/Sophos/SophosUniversity/controllers/StudentController.java
+/Users/admon/Documents/universidad/SophosUniversity/BackEnd/StudentService/src/main/java/com/Sophos/SophosUniversity/config/RestConts.java
 /Users/admon/Documents/universidad/SophosUniversity/BackEnd/StudentService/src/main/java/com/Sophos/SophosUniversity/exceptions/EnrollmentNotFoundException.java

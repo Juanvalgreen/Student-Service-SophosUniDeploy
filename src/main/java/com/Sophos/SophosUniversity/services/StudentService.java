@@ -145,7 +145,7 @@ public class StudentService implements IStudentService{
             try{
 
 
-                ResponseEntity<Enrollments[]> responseEntity= restTemplate.getForEntity(RestConts.BASE_URL_ENROLLMENTS_LOCAL +"/api/v1/enrollments/"+id+"/students", Enrollments[].class);
+                ResponseEntity<Enrollments[]> responseEntity= restTemplate.getForEntity(RestConts.BASE_URL_ENROLLMENTS_DEPLOY +"/api/v1/enrollments/"+id+"/students", Enrollments[].class);
                 List<Enrollments> enrollments = Arrays.asList(responseEntity.getBody());
 
                 for (Enrollments enroll : enrollments) {
